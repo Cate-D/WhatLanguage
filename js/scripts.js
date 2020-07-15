@@ -1,31 +1,24 @@
 // Business logic:
 
-//function add(number1, number2) {
-  //return number1 + number2;
-//}
-
-//function subtract(number1, number2) {
-  //return number1 - number2;
-//}
-
-//function multiply(number1, number2) {
- // return number1 * number2;
-//}
-
-// function divide(number1, number2) {
-  //return number1 / number2;
-//} 
+function submit(answer1, answer2, answer3, answer4, answer5) {
+  return answer1 + answer2 + answer3 + answer4 + answer5;
+};
 
 // User interface logic:
 
 $(document).ready(function() {
   $("form#quiz").submit(function() {
     event.preventDefault();
-    const number1 = parseInt($("#input1").val());
-    const number2 = parseInt($("#input2").val());
-    const operator = $("input:radio[name=operator]:checked").val();
+  
+    const answer1 = $("input:radio[name=question1]:checked").val();
+    const answer2 = $("input:radio[name=question2]:checked").val();
+    const answer3 = $("input:radio[name=question3]:checked").val();
+    const answer4 = $("input:radio[name=question4]:checked").val();
+    const answer5 = $("input:radio[name=question5]:checked").val();
+   
+   
     let result;
-    if (operator === "add") {
+    if (submit === "submit") {
       result = add(number1, number2);
     } else if (operator === "subtract") {
       result = subtract(number1, number2);
@@ -34,6 +27,6 @@ $(document).ready(function() {
     } else if (operator === "divide") {
       result = divide(number1, number2);
     }
-    $("#output").text(result);
+    $("#result").text(result);
   });
 });
