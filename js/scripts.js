@@ -2,7 +2,21 @@
 
 function submit(answer1, answer2, answer3, answer4, answer5) {
   return answer1 + answer2 + answer3 + answer4 + answer5;
-};
+}; 
+
+function determineLang(result) {
+  let language;
+  if (result===5 || result===6) {
+    language = "Based on your score, you should learn C#!"
+  } else if (result===7 || result===8) {
+    language = "Based on your score, you should learn JavaScript!"
+  } else if (result===9 || result===10) {
+    language = "Based on your score, you should learn Python!"
+  } else { 
+    language = "Please complete all questions for your most accurate result!"
+  }
+  return language;
+}
 
 // User interface logic:
 
@@ -16,17 +30,11 @@ $(document).ready(function() {
     const answer4 = $("input:radio[name=question4]:checked").val();
     const answer5 = $("input:radio[name=question5]:checked").val();
    
-   
-    let result;
-    if (submit === "submit") {
-      result = add(number1, number2);
-    } else if (operator === "subtract") {
-      result = subtract(number1, number2);
-    } else if (operator === "multiply") {
-      result = multiply(number1, number2);
-    } else if (operator === "divide") {
-      result = divide(number1, number2);
-    }
-    $("#result").text(result);
+    const result = submit(parseInt(answer1), parseInt(answer2), parseInt(answer3), parseInt(answer4), parseInt(answer5));
+    const selectedLang = determineLang(result);
+
+    $("#result").text(selectedLang);
+    $("#result").css( "display", "show" )
+    $("#quiz").css("display", "none")
   });
 });
