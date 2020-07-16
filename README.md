@@ -8,7 +8,7 @@
 
 _This landing page is a school project for users to answer quiz questions. The user's answers are scored for three different results._
 
-_Link to site on github pages https://cate-d.github.io/Portfolio/._
+_Link to site on github pages https://cate-d.github.io/WhatLanguage/._
 
 ## Setup/Installation Requirements
 
