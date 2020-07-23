@@ -1,3 +1,8 @@
+.headings {
+  font-weight: bold;
+  text-align: center;
+}
+
 .resultCplus {
   display: show;
 }
@@ -8,4 +13,4 @@
 
 #resultPython {
   display: show;
-}
+} 
